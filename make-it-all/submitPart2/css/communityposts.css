@@ -1,0 +1,45 @@
+.technical-sub {
+    margin-left: 20px; /* Adjust this value to control the indentation */
+}
+
+.nontechnical-sub {
+    margin-left: 20px; /* Adjust this value to control the indentation */
+}
+
+.post {
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(246,217,0,255);
+}
+
+.comment {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-gap: 10px;
+}
+
+.postDetails {
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.likeCount {
+    font-size: 12px; 
+    color: #afc4cf; 
+    font-weight: bold; 
+    margin-top: 5px; 
+    align-items: center;
+    cursor: pointer;
+}
+
+.clickable {
+    cursor: pointer;
+}
+.myPosts {
+    display: none;
+    background-color: rgba(215,215,215,255);
+    padding: 20px;
+    border-radius: 20px;
+}

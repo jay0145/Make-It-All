@@ -1,0 +1,77 @@
+.login{ 
+    /* This class refers to the form in this page */
+    margin: 10px;
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 9;
+    font-family: Arial, sans-serif;
+    background-color: rgba(210,210,210,255);
+    border-radius: 20px;
+}
+
+.form-control{
+    align-self: flex-start;
+    display: grid;
+    justify-items:center ;
+    align-items: center;
+    padding: 50px;
+    background-color: rgba(210,210,210,255);
+    border-radius: 20px;
+} 
+
+input{
+    /* Styling for the textboxes for username & passwords */
+    border: none;
+    border-bottom: 1px solid rgba(210,210,210,255);
+    outline: none;
+}
+
+#username{
+    margin-top: 10px;
+}
+
+.heading{
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.header {
+    grid-column: 1 / 4;
+    background-color: rgb(168, 168, 168);
+    padding: 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.submit{
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
+}
+
+label{
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+body{
+    background-color: rgba(248,220,2,255);
+}
+
+.button-container {
+	white-space: nowrap;
+}
+
+.button-container button {
+	margin-right: 20px !important;
+}

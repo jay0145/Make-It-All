@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- username is "username" and password is "password" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="registrationStyling.css">
+    <style>
+    #regis{
+      color: white;
+      margin-top: 5px ;
+      padding: 10px;
+    }
+    input{
+      padding: 3px;
+      margin: 5px ;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+    <div class="login">
+    <h2 id="regis">Registration</h2>
+    <form action="registration.php" method="get" id="login" class="form-control">
+      Forename
+          <input type="fname" name="firstName" placeholder="First Name" required>
+          Surname
+          <input type="lname" name="lastName" placeholder="Surname" required>
+            <br>
+            Date of Birth
+            <input type="date" placeholder="DOB" name="DOB" id="DOB" max="2100-01-01" value="1960-01-01" required>
+            <br>
+        <!-- <input type="email" placeholder="Staff Email" name="email" id="email" pattern="^[A-Za-z0-9]*@makeitall\.com$" required/> -->
+        Address
+        <input type="text" placeholder="Address" id="Address" name="Address" required>
+        Staff Email
+        <input type="email" placeholder="Staff Email" name="email" id="email" required>
+        <br>
+        Password
+        <input type="password" placeholder="Password" name="password" id="password" minlength="7" maxlength="20" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        <br>
+        
+          <li>Minimum Length: 7</li>
+          <li>Atleast 1 Number</li>
+          <li>Atleast 1 Uppercase Letter</li>
+          <li>Atleast 1 Special Character</li>
+        
+        <br>
+        <br>
+        Department:
+        <select name="dept" id="dept" required>
+          <option value="Sales">Sales</option>
+          <option value="Admin">Admin</option>
+          <option value="Technical">Technical</option>
+        </select>
+        <div class="submit">
+        <button type="submit" class="btn btn-dark" id="submit">Register</button>
+        </div>
+    </form>
+    </div>
+</div>
+<script>
+
+        /*const login = document.getElementById("login");
+        const login_button = document.getElementById("submit");
+        login_button.addEventListener("click", (e) =>{
+        e.preventDefault();
+            const pass = login.password.value;
+            const rpass = login.repeatPassword.value;
+            if(pass == rpass)
+            {
+             alert("Acceptable Password")
+            }
+            else
+            alert("Passwords are not the same!")
+        })
+        */
+</script>
+</body>
+</html>

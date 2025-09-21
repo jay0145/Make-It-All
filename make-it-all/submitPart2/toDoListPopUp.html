@@ -1,0 +1,181 @@
+<!-- Context:
+    overlay is the background of the webpage
+    Pop-up is the outer div, containing another div inside it called myForm
+    myForm is the inner div, containing the form itself.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Template</title>
+    <link rel="stylesheet" href="generalStyles.css">
+    <style>
+        /* Essential styling for overlay and pop-up */
+        .overlay {
+            display: none;
+            position: fixed;
+top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1, 0, 0, 0); 
+            transition: background-color 0.3s ease;
+        }
+        .pop-up {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(255, 255, 250) ;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            padding: 20px;
+        }
+        .left-hand {
+            display: flex;
+            flex-direction: column;
+          margin: 20px;
+        }
+        .right-hand {
+            float: right;
+            margin: 20px;
+        }
+
+        .divPriority{
+          margin-bottom: 20px;
+        }
+        .pop-up{
+          background-color: lightgrey;
+        }
+        /* Additional styling for labels and input fields */
+        label {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #radioLabel{
+          font-weight:bold;
+        }
+        
+        /* Styling for buttons */
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: yellow;
+        }
+        h2{
+          text-align: center;
+        }
+        li{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Button to trigger the form -->
+    <button onclick="openForm()">Click</button> 
+
+    <!-- Pop-up form -->
+    <div class="pop-up" id="pop-up">
+        <form id="myForm" action="toDo.php" method="get" class="form-control">
+        <h2>Create Task</h2>
+            <div class="right-hand">
+                <!-- Priority selection -->
+              <div class="divPriority">
+                <label>Priority</label>
+                <br>
+                <label for="low" id="radioLabel">Low</label>
+                <input type="radio" name="priority" value="low">
+                <label for="high" id="radioLabel">High</label>
+                <input type="radio" name="priority" value="high">
+                <label for="veryhigh" id="radioLabel">Very High</label>
+                <input type="radio" name="priority" value="veryhigh">
+                <br>
+              </div>
+                <!-- Deadline input -->
+              <div class="divDeadline">
+                <label for="deadlineDate">Deadline</label>
+                <br>
+                <input type="date" name="deadlineDate" value="" required>
+                <input type="time" name="deadlineTime" value="00:00">
+              </div>
+              <div class="subTaskDiv" id="subTaskDiv">
+                <label for="subTasks">Sub-Tasks</label>
+                <input type="text" name="subTasks" id="subTasks">
+                <button type="button" onclick="addSubTask(document.getElementById('subTasks').value)">Add Sub-Task</button>
+                <p id="noOfSubtasks"></p>
+                <input type="hidden" id="no-of-subtasks" name="no-of-subtasks">
+              </div>
+            </div>
+
+            <div class="left-hand">
+                <!-- Heading input -->
+                <label for="heading">Heading</label>
+                <br>
+                <input type="text" id="heading" name="heading" required> 
+                <!-- Description input -->
+                <label for="description">Description</label>
+                <br>
+                <textarea rows="10" cols="40" id="description" name="description" required></textarea>
+            </div>
+
+            <!-- Submit and cancel buttons -->
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("pop-up").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("overlay").style.backgroundColor = "rgba(0, 0, 0, 0.5)"; 
+            }, 10);
+        }
+
+        function closeForm() {
+            document.getElementById("pop-up").style.display = "none";
+            document.getElementById("overlay").style.backgroundColor = "rgba(0, 0, 0, 0)"; 
+            setTimeout(() => {
+                document.getElementById("overlay").style.display = "none";
+            }, 300);
+            document.getElementById('myForm').reset();
+        }
+        function addSubTask(sTask)
+        {
+            let no_of_tasks = document.createElement('p');
+            let count =  document.querySelectorAll('li').length+1;
+            document.getElementById("noOfSubtasks").innerHTML = "Number of Subtasks: " + count
+            document.getElementById('no-of-subtasks').value = count;
+            const list = document.createElement('li')
+            const input = document.createElement('input')
+            input.type = "hidden";
+            input.name = "subtasks[]";
+            input.value = sTask;
+            const task = document.createTextNode(sTask);
+            list.append(input);
+            list.append(task);
+            document.getElementById('subTaskDiv').appendChild(list);
+        }
+    </script>
+</body>
+</html>
+

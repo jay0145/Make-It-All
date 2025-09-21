@@ -1,0 +1,136 @@
+
+#editContentForm {
+    max-width: 600px;
+    width: 100%;
+}
+
+#contentForm {
+    max-width: 600px;
+    width: 100%;
+}
+
+#edit-post-popup {
+    background-color: rgba(215,215,215,255); /* Light grey background */
+    padding: 20px;
+    border-radius: 25px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+} 
+
+#create-post-popup {
+    background-color: rgba(215,215,215,255);
+    padding: 20px;
+    border-radius: 25px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); Subtle box shadow for depth */
+}
+
+#create-post-popup span, 
+#create-post-popup label, 
+#create-post-popup input, 
+#create-post-popup textarea, 
+#create-post-popup button {
+    color: rgba(100,99,99,255); /* Orange text */
+}
+
+#edit-post-popup span, 
+#edit-post-popup label, 
+#edit-post-popup input, 
+#edit-post-popup textarea, 
+#edit-post-popup button {
+    color: rgba(100,99,99,255); /* Orange text */
+}
+#editContentForm{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(215,215,215,255) ;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 5px;
+}
+
+#contentForm{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: rgba(215,215,215,255) ;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 5px;
+}
+
+#create-post-popup > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#edit-post-popup > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create-post-popup > div:first-child > span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+#edit-post-popup > div:first-child > span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+#create-post-popup button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: rgba(246,217,0,255);
+    color: rgba(100,99,99,255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#edit-post-popup button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: rgba(246,217,0,255);
+    color: rgba(100,99,99,255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#create-post-popup button:hover {
+    background-color: rgba(246,217,0,255); /* Darker shade of orange for hover effect */
+}
+
+#edit-post-popup button:hover {
+    background-color: rgba(246,217,0,255); /* Darker shade of orange for hover effect */
+}
+
+#contentarea {
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+.textField{
+    width: 524px;
+    height: 330px;
+}
+#schedule-post {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}

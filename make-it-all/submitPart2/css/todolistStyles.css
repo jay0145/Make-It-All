@@ -1,0 +1,114 @@
+/* Style the list items */
+ul.tasks-list {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    background-color:rgb(192, 190, 190) ;
+    padding: 10px 5px;
+    border-radius: 10px; 
+    cursor: pointer;
+    border: none;
+    grid-area: title; 
+}
+
+.description { 
+    grid-area: description;
+}
+
+.subtask { 
+    grid-area: subtask;
+}
+
+.deadline { 
+    grid-area: deadline;
+}
+
+.collapse {
+    grid-area: collapse;
+}
+
+.edit {
+    grid-area: edit;
+}
+
+#checkbox{
+    float:right;
+    align-self: center;
+}
+
+/* Collapsing Mechanics */
+.title:hover {
+    background-color: rgb(168, 168, 168);
+  }
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    'title-container'
+    'content-container';
+    grid-gap: 5px;
+    background-color:rgba(248,220,2,255) ;
+    padding: 10px 5px;/*5px is for text padding*/
+    border-radius: 10px;
+    text-align: left  
+}
+
+.title-container{
+    display: grid;
+    grid-template-areas: 
+    'title title title title title title';
+    grid-gap: 5px;
+    text-align: left;
+}
+
+.content-container{
+    overflow: hidden;
+    display: none;
+    grid-template-areas:
+    'description description description description deadline deadline'
+    'subtask subtask subtask subtask deadline deadline'
+    '. . . . edit markComplete';
+    grid-gap: 5px;
+    background-color:rgba(248,220,2,255) ;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.content-container > div {
+    background-color: rgb(192, 190, 190) ;
+    padding: 10px 5px; 
+    border-radius: 10px;
+    text-align: left;
+}
+
+/*Subtask Styles*/
+.subtask > ul >li {
+    border-radius: 5px;
+    margin: 2px;
+    margin-right: 10px;
+    padding: 2px;
+}
+
+.subtask > ul >li:nth-child(odd) {
+    background-color: rgba(215,215,215,255);
+}
+
+.subtask > ul >li:nth-child(even) {
+    background-color: rgba(180,180,180,255); 
+}
+
+.subtask > ul > li.ticked{
+    background-color:rgba(111, 209, 111);
+}
+
+.subtask > ul >li:hover  {
+    background-color: rgba(248,220,2,255);
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+}
+
+

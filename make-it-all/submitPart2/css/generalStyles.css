@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin-top: 0;
+  padding: 0;
+}
+
+.nav-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: gray;
+  /* a shade of purple */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+  background-color: #5E438A;
+  /* a darker shade of purple */
+}
+
+@property --progress-value {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 0;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(rgba(217,154,1,255) calc(var(--progress-value) * 1%), rgb(255, 255, 229) 0);
+}
+
+.progress-bar::before {
+  counter-reset: percentage var(--progress-value);
+  content: counter(percentage) '%';
+}
+
+.icon-container {
+  padding: 20px;
+  text-align: right;
+  background-color: black;
+}
+
+.icon-container a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: gray;
+  /* a shade of purple */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.icon-messaging, .icon-notifactions, .icon-darkmode, .icon-profile {
+  padding: 2px;
+}
+
+.left-content {
+  margin-right: 10px;
+}
+
+.center-content {
+  margin: 0 auto;
+}

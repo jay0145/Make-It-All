@@ -1,0 +1,114 @@
+.employee-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcome-container {
+  float: left;
+}
+
+.employee-info-container {
+  float: left;
+  text-align: left;
+  font-weight: bold;
+}
+
+.inside-container {
+  padding: 10px;
+  background-color: rgba(246, 217, 0, 255);
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.to-do-list-container {
+  padding: 15px;
+  background-color: rgba(171,171,171,255);
+  border-radius: 15px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Additional styles from the inline styles */
+.icon-image, .icon-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Specific styles for the top part of the header */
+.homepage-header-top {
+  display: flex;
+  align-items: center;
+  padding-top: 10px; 
+}
+
+.home-title {
+  color: rgba(115, 115, 115, 255);
+}
+
+.center-content {
+  display: flex;
+}
+
+/* Specific styles for the bottom part of the header */
+.homepage-header-bottom {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* Responsive styles for phone screens */
+@media screen and (max-width: 600px) {
+  .header, .nav-bar, .left-sidebar, .right-sidebar, .container, .icon-container, .employee-info-container, .welcome-container, .to-do-list-container, .progress-container, .inside-container {
+    display: block;
+    width: 100%;
+    box-sizing: border-box; 
+  }
+
+  .icon-container i, .icon-container img {
+    width: auto; 
+    height: auto;
+  }
+
+  .employee-info-container, .welcome-container {
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px; 
+  }
+
+  .nav-bar a {
+    display: block;
+    padding: 10px;
+    text-align: center; 
+    border-bottom: 1px solid #ccc; 
+  }
+  
+  .homepage-header-top {
+    justify-content: flex-start; 
+    padding-top: 0; 
+  }
+
+  .homepage-header-top img[src="homePageIconImage.png"],
+  .left-content img {
+    order: -1; 
+    margin-right: auto; 
+    padding: 10px 0; 
+    width: 50px; 
+    height: auto; 
+  }
+
+  .left-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+}
+
